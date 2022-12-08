@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:datadraw="clr-namespace:Compass02"
+             x:Class="Compass02.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="5"
+            Padding="10,0"
+            VerticalOptions="Center">
+            <datadraw:DataGraphicsView
+             WidthRequest="400"
+             HeightRequest="500"
+             x:Name="myCanvas"/>
+            <HorizontalStackLayout>
+                <Button Text="측정시작"
+                        VerticalOptions="Center"
+                        HorizontalOptions="Center"
+                        x:Name="StartButton"
+                        IsEnabled="True"
+                        Clicked="StartButton_Clicked"/>
+                <Button Text="측정중지"
+                        VerticalOptions="Center"
+                        HorizontalOptions="Center"
+                        x:Name="StopButton"
+                        IsEnabled="False"
+                        Clicked="StopButton_Clicked"/>
+                <Label 
+                    x:Name="AccelLabel"
+                    Text=""
+                    SemanticProperties.HeadingLevel="Level8"
+                    FontSize="16"
+                    HorizontalOptions="Center"/>
+            </HorizontalStackLayout>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
